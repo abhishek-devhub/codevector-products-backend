@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { CATEGORIES } from "../constants/categories";
+import { CATEGORIES } from "../constants/categories.js";
 
 export const getProductsQuerySchema = z.object({
     limit: z.coerce.number().int().positive().max(100).optional(),
