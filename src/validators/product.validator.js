@@ -1,16 +1,8 @@
 import { z } from "zod";
-import { CATEGORIES } from "../constants/categories.js";
 
 export const getProductsQuerySchema = z.object({
     limit: z.coerce.number().int().positive().max(100).optional(),
-    category: z
-        .string()
-        .trim()
-        .toLowerCase()
-        .refine((value) => CATEGORIES.includes(value), {
-            message: "Invalid Category"
-        })
-        .optional(),
+    category: z.string().trim().toLowerCase().min(1).optional(),
     cursor: z.string().optional(),
     snapshot: z.string().datetime().optional()
 })
