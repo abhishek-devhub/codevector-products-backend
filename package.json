@@ -9,10 +9,12 @@
     "start": "node src/server.js",
     "prisma:generate": "prisma generate",
     "prisma:migrate": "prisma migrate dev",
-    "seed": "node scripts/seed.js"
+    "seed": "node scripts/seed.js",
+    "test:pagination": "node scripts/test-pagination.js"
   },
   "dependencies": {
     "@prisma/client": "^6.10.1",
+    "axios": "^1.18.1",
     "cors": "^2.8.5",
     "express": "^4.19.2",
     "helmet": "^7.1.0",
