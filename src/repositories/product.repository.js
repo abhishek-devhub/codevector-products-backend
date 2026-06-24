@@ -1,4 +1,4 @@
-import { Prisma } from "@prisma/client";
+import { Prisma } from "../../generated/prisma/index.js";
 import { prisma } from "../db/prisma.js";
 
 export async function getProductsPage({
