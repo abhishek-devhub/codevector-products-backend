@@ -17,8 +17,8 @@ model Product {
   name String
   category String
   price Decimal @db.Decimal(10,2)
-  createdAt DateTime? @default(now()) @map("created_at") @db.Timestamp(6)
-  updatedAt DateTime? @updatedAt @map("updated_at") @db.Timestamp(6)
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamp(6)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamp(6)
 
   @@index([updatedAt(sort: Desc), id(sort: Desc)],map:"idx_products_updated_id_desc")
   @@index([category,updatedAt(sort: Desc), id(sort: Desc)],map:"idx_products_category_updated_id_desc")
